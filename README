@@ -8,7 +8,7 @@ Read the documentation at https://github.com/Pita/etherpad-lite/wiki/HTTP-API
 
 EXAMPLES:
 Add
-- EtherpadController
+- EtherAPIController
 - EtherNetworkController
 - EtherJsonController
 to your project.
