@@ -1,0 +1,18 @@
+etherpad-lite-objc
+
+An Objective-C client for Etherpad Lite’s HTTP JSON API. Etherpad Lite is a collaborative editor provided by the Etherpad Foundation.
+See https://github.com/Pita/etherpad-lite for more information.
+
+DOCUMENTATION:
+Read the documentation at https://github.com/Pita/etherpad-lite/wiki/HTTP-API
+
+EXAMPLES:
+Add
+- EtherpadController
+- EtherNetworkController
+- EtherJsonController
+to your project.
+
+See EtherpadController for basic usage information.
+
+
