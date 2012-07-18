@@ -1,0 +1,328 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FACD72F415B72B1E00CDB06C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACD72F315B72B1E00CDB06C /* Cocoa.framework */; };
+		FACD72FE15B72B1E00CDB06C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FACD72FC15B72B1E00CDB06C /* InfoPlist.strings */; };
+		FACD730015B72B1E00CDB06C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FACD72FF15B72B1E00CDB06C /* main.m */; };
+		FACD730415B72B1E00CDB06C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FACD730215B72B1E00CDB06C /* Credits.rtf */; };
+		FACD730715B72B1E00CDB06C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FACD730615B72B1E00CDB06C /* AppDelegate.m */; };
+		FACD730A15B72B1F00CDB06C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACD730815B72B1F00CDB06C /* MainMenu.xib */; };
+		FACD731615B72B5800CDB06C /* EtherAPIController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACD731115B72B5800CDB06C /* EtherAPIController.m */; };
+		FACD731715B72B5800CDB06C /* EtherJsonController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACD731315B72B5800CDB06C /* EtherJsonController.m */; };
+		FACD731815B72B5800CDB06C /* EtherNetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACD731515B72B5800CDB06C /* EtherNetworkController.m */; };
+		FACD731B15B72B6F00CDB06C /* EtherpadController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACD731A15B72B6F00CDB06C /* EtherpadController.m */; };
+		FACD731D15B72BB700CDB06C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FACD731C15B72BB600CDB06C /* LICENSE */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FACD72EF15B72B1E00CDB06C /* etherpad-lite-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "etherpad-lite-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FACD72F315B72B1E00CDB06C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		FACD72F615B72B1E00CDB06C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		FACD72F715B72B1E00CDB06C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FACD72F815B72B1E00CDB06C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FACD72FB15B72B1E00CDB06C /* etherpad-lite-objc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "etherpad-lite-objc-Info.plist"; sourceTree = "<group>"; };
+		FACD72FD15B72B1E00CDB06C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FACD72FF15B72B1E00CDB06C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FACD730115B72B1E00CDB06C /* etherpad-lite-objc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "etherpad-lite-objc-Prefix.pch"; sourceTree = "<group>"; };
+		FACD730315B72B1E00CDB06C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		FACD730515B72B1E00CDB06C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FACD730615B72B1E00CDB06C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FACD730915B72B1F00CDB06C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FACD731015B72B5800CDB06C /* EtherAPIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EtherAPIController.h; sourceTree = "<group>"; };
+		FACD731115B72B5800CDB06C /* EtherAPIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EtherAPIController.m; sourceTree = "<group>"; };
+		FACD731215B72B5800CDB06C /* EtherJsonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EtherJsonController.h; sourceTree = "<group>"; };
+		FACD731315B72B5800CDB06C /* EtherJsonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EtherJsonController.m; sourceTree = "<group>"; };
+		FACD731415B72B5800CDB06C /* EtherNetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EtherNetworkController.h; sourceTree = "<group>"; };
+		FACD731515B72B5800CDB06C /* EtherNetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EtherNetworkController.m; sourceTree = "<group>"; };
+		FACD731915B72B6F00CDB06C /* EtherpadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EtherpadController.h; sourceTree = "<group>"; };
+		FACD731A15B72B6F00CDB06C /* EtherpadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EtherpadController.m; sourceTree = "<group>"; };
+		FACD731C15B72BB600CDB06C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FACD72EC15B72B1E00CDB06C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACD72F415B72B1E00CDB06C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FACD72E415B72B1E00CDB06C = {
+			isa = PBXGroup;
+			children = (
+				FACD72F915B72B1E00CDB06C /* etherpad-lite-objc */,
+				FACD72F215B72B1E00CDB06C /* Frameworks */,
+				FACD72F015B72B1E00CDB06C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FACD72F015B72B1E00CDB06C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FACD72EF15B72B1E00CDB06C /* etherpad-lite-objc.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FACD72F215B72B1E00CDB06C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FACD72F315B72B1E00CDB06C /* Cocoa.framework */,
+				FACD72F515B72B1E00CDB06C /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FACD72F515B72B1E00CDB06C /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FACD72F615B72B1E00CDB06C /* AppKit.framework */,
+				FACD72F715B72B1E00CDB06C /* CoreData.framework */,
+				FACD72F815B72B1E00CDB06C /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		FACD72F915B72B1E00CDB06C /* etherpad-lite-objc */ = {
+			isa = PBXGroup;
+			children = (
+				FACD731C15B72BB600CDB06C /* LICENSE */,
+				FACD730515B72B1E00CDB06C /* AppDelegate.h */,
+				FACD730615B72B1E00CDB06C /* AppDelegate.m */,
+				FACD731915B72B6F00CDB06C /* EtherpadController.h */,
+				FACD731A15B72B6F00CDB06C /* EtherpadController.m */,
+				FACD731015B72B5800CDB06C /* EtherAPIController.h */,
+				FACD731115B72B5800CDB06C /* EtherAPIController.m */,
+				FACD731415B72B5800CDB06C /* EtherNetworkController.h */,
+				FACD731515B72B5800CDB06C /* EtherNetworkController.m */,
+				FACD731215B72B5800CDB06C /* EtherJsonController.h */,
+				FACD731315B72B5800CDB06C /* EtherJsonController.m */,
+				FACD730815B72B1F00CDB06C /* MainMenu.xib */,
+				FACD72FA15B72B1E00CDB06C /* Supporting Files */,
+			);
+			path = "etherpad-lite-objc";
+			sourceTree = "<group>";
+		};
+		FACD72FA15B72B1E00CDB06C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FACD72FB15B72B1E00CDB06C /* etherpad-lite-objc-Info.plist */,
+				FACD72FC15B72B1E00CDB06C /* InfoPlist.strings */,
+				FACD72FF15B72B1E00CDB06C /* main.m */,
+				FACD730115B72B1E00CDB06C /* etherpad-lite-objc-Prefix.pch */,
+				FACD730215B72B1E00CDB06C /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FACD72EE15B72B1E00CDB06C /* etherpad-lite-objc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FACD730D15B72B1F00CDB06C /* Build configuration list for PBXNativeTarget "etherpad-lite-objc" */;
+			buildPhases = (
+				FACD72EB15B72B1E00CDB06C /* Sources */,
+				FACD72EC15B72B1E00CDB06C /* Frameworks */,
+				FACD72ED15B72B1E00CDB06C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "etherpad-lite-objc";
+			productName = "etherpad-lite-objc";
+			productReference = FACD72EF15B72B1E00CDB06C /* etherpad-lite-objc.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FACD72E615B72B1E00CDB06C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Alexander Zautke";
+			};
+			buildConfigurationList = FACD72E915B72B1E00CDB06C /* Build configuration list for PBXProject "etherpad-lite-objc" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FACD72E415B72B1E00CDB06C;
+			productRefGroup = FACD72F015B72B1E00CDB06C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FACD72EE15B72B1E00CDB06C /* etherpad-lite-objc */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FACD72ED15B72B1E00CDB06C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACD72FE15B72B1E00CDB06C /* InfoPlist.strings in Resources */,
+				FACD730415B72B1E00CDB06C /* Credits.rtf in Resources */,
+				FACD730A15B72B1F00CDB06C /* MainMenu.xib in Resources */,
+				FACD731D15B72BB700CDB06C /* LICENSE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FACD72EB15B72B1E00CDB06C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACD730015B72B1E00CDB06C /* main.m in Sources */,
+				FACD730715B72B1E00CDB06C /* AppDelegate.m in Sources */,
+				FACD731615B72B5800CDB06C /* EtherAPIController.m in Sources */,
+				FACD731715B72B5800CDB06C /* EtherJsonController.m in Sources */,
+				FACD731815B72B5800CDB06C /* EtherNetworkController.m in Sources */,
+				FACD731B15B72B6F00CDB06C /* EtherpadController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FACD72FC15B72B1E00CDB06C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FACD72FD15B72B1E00CDB06C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FACD730215B72B1E00CDB06C /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FACD730315B72B1E00CDB06C /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		FACD730815B72B1F00CDB06C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FACD730915B72B1F00CDB06C /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FACD730B15B72B1F00CDB06C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FACD730C15B72B1F00CDB06C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FACD730E15B72B1F00CDB06C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "etherpad-lite-objc/etherpad-lite-objc-Prefix.pch";
+				INFOPLIST_FILE = "etherpad-lite-objc/etherpad-lite-objc-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FACD730F15B72B1F00CDB06C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "etherpad-lite-objc/etherpad-lite-objc-Prefix.pch";
+				INFOPLIST_FILE = "etherpad-lite-objc/etherpad-lite-objc-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FACD72E915B72B1E00CDB06C /* Build configuration list for PBXProject "etherpad-lite-objc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACD730B15B72B1F00CDB06C /* Debug */,
+				FACD730C15B72B1F00CDB06C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FACD730D15B72B1F00CDB06C /* Build configuration list for PBXNativeTarget "etherpad-lite-objc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACD730E15B72B1F00CDB06C /* Debug */,
+				FACD730F15B72B1F00CDB06C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FACD72E615B72B1E00CDB06C /* Project object */;
+}
