@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA9D33AA15B7344A00B45F33 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		FA9D33AA15B7344A00B45F33 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README; path = "etherpad-lite-objc/README"; sourceTree = "<group>"; };
 		FACD72EF15B72B1E00CDB06C /* etherpad-lite-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "etherpad-lite-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACD72F315B72B1E00CDB06C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FACD72F615B72B1E00CDB06C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -62,6 +62,7 @@
 		FACD72E415B72B1E00CDB06C = {
 			isa = PBXGroup;
 			children = (
+				FA9D33AA15B7344A00B45F33 /* README */,
 				FACD72F915B72B1E00CDB06C /* etherpad-lite-objc */,
 				FACD72F215B72B1E00CDB06C /* Frameworks */,
 				FACD72F015B72B1E00CDB06C /* Products */,
@@ -99,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				FACD731C15B72BB600CDB06C /* LICENSE */,
-				FA9D33AA15B7344A00B45F33 /* README */,
 				FACD730515B72B1E00CDB06C /* AppDelegate.h */,
 				FACD730615B72B1E00CDB06C /* AppDelegate.m */,
 				FACD731915B72B6F00CDB06C /* EtherpadController.h */,
