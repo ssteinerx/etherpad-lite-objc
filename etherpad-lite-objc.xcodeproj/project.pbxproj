@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA9D33AB15B7344A00B45F33 /* README in Resources */ = {isa = PBXBuildFile; fileRef = FA9D33AA15B7344A00B45F33 /* README */; };
 		FACD72F415B72B1E00CDB06C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACD72F315B72B1E00CDB06C /* Cocoa.framework */; };
 		FACD72FE15B72B1E00CDB06C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FACD72FC15B72B1E00CDB06C /* InfoPlist.strings */; };
 		FACD730015B72B1E00CDB06C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FACD72FF15B72B1E00CDB06C /* main.m */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA9D33AA15B7344A00B45F33 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		FACD72EF15B72B1E00CDB06C /* etherpad-lite-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "etherpad-lite-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACD72F315B72B1E00CDB06C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FACD72F615B72B1E00CDB06C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				FACD731C15B72BB600CDB06C /* LICENSE */,
+				FA9D33AA15B7344A00B45F33 /* README */,
 				FACD730515B72B1E00CDB06C /* AppDelegate.h */,
 				FACD730615B72B1E00CDB06C /* AppDelegate.m */,
 				FACD731915B72B6F00CDB06C /* EtherpadController.h */,
@@ -180,6 +183,7 @@
 				FACD730415B72B1E00CDB06C /* Credits.rtf in Resources */,
 				FACD730A15B72B1F00CDB06C /* MainMenu.xib in Resources */,
 				FACD731D15B72BB700CDB06C /* LICENSE in Resources */,
+				FA9D33AB15B7344A00B45F33 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +325,7 @@
 				FACD730F15B72B1F00CDB06C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

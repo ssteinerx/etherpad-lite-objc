@@ -22,7 +22,7 @@
     if (self) {
         apiController = [[EtherAPIController alloc] init];
         apiController.delegate = self;
-        apiController.apiKey = @"RRaTKUJASvf3damXRVhg7KXYwytqqIMi";
+        apiController.apiKey = @"apiKey";
         apiController.host = @"http://localhost:9001";
     }
     return self;
