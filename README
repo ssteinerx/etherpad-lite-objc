@@ -13,6 +13,11 @@ Add
 - EtherJsonController
 to your project.
 
-See EtherpadController for basic usage information.
+EtherAPIController* apiController = [[EtherAPIController alloc] init];
+apiController.delegate = self;
+apiController.apiKey = @"apiKey";
+apiController.host = @"http://localhost:9001";
+
+[apiController createPad:@"newEtherpad" :@"HelloWorld"];
 
 
