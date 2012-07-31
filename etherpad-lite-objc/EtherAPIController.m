@@ -212,7 +212,14 @@
 
 -(void)setPublicStatus:(NSString*)padID:(BOOL)publicStatus{
     self.message = @"setPublicStatus";
-    self.messageParameters = [NSString stringWithFormat:@"padID=%@&publicStatus=%d",padID,publicStatus];
+    NSString* publicS;
+    if (publicStatus) {
+        publicS = @"true";
+    }
+    else{
+        publicS = @"false";
+    }
+    self.messageParameters = [NSString stringWithFormat:@"padID=%@&publicStatus=%@",padID,publicS];
     [self sendMessageToPad];
 }
 

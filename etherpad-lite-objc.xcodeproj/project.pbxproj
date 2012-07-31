@@ -17,7 +17,6 @@
 		FACD731715B72B5800CDB06C /* EtherJsonController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACD731315B72B5800CDB06C /* EtherJsonController.m */; };
 		FACD731815B72B5800CDB06C /* EtherNetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACD731515B72B5800CDB06C /* EtherNetworkController.m */; };
 		FACD731B15B72B6F00CDB06C /* EtherpadController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACD731A15B72B6F00CDB06C /* EtherpadController.m */; };
-		FACD731D15B72BB700CDB06C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FACD731C15B72BB600CDB06C /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +41,6 @@
 		FACD731515B72B5800CDB06C /* EtherNetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EtherNetworkController.m; sourceTree = "<group>"; };
 		FACD731915B72B6F00CDB06C /* EtherpadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EtherpadController.h; sourceTree = "<group>"; };
 		FACD731A15B72B6F00CDB06C /* EtherpadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EtherpadController.m; sourceTree = "<group>"; };
-		FACD731C15B72BB600CDB06C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +94,6 @@
 		FACD72F915B72B1E00CDB06C /* etherpad-lite-objc */ = {
 			isa = PBXGroup;
 			children = (
-				FACD731C15B72BB600CDB06C /* LICENSE */,
 				FACD730515B72B1E00CDB06C /* AppDelegate.h */,
 				FACD730615B72B1E00CDB06C /* AppDelegate.m */,
 				FACD731915B72B6F00CDB06C /* EtherpadController.h */,
@@ -179,7 +176,6 @@
 				FACD72FE15B72B1E00CDB06C /* InfoPlist.strings in Resources */,
 				FACD730415B72B1E00CDB06C /* Credits.rtf in Resources */,
 				FACD730A15B72B1F00CDB06C /* MainMenu.xib in Resources */,
-				FACD731D15B72BB700CDB06C /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
