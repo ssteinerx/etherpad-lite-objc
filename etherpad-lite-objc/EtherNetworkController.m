@@ -36,7 +36,7 @@
 #pragma mark main methods
 
 -(void)sendMessage:(NSString *)message ToHost:(NSString *)host apiKey:(NSString *)apiKey messageParameters:(NSString *)messageParameters{
-    NSString* urlString = [[NSString alloc] initWithFormat:@"%@/api/1/%@?apikey=%@&%@",host,message,apiKey,messageParameters];
+    NSString* urlString = [[NSString alloc] initWithFormat:@"%@/api/1.1/%@?apikey=%@&%@",host,message,apiKey,messageParameters];
     NSURL* url = [[NSURL alloc] initWithString:urlString];
     NSURLRequest* request = [[NSURLRequest alloc] initWithURL:url];
     self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];

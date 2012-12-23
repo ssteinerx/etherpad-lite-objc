@@ -23,13 +23,13 @@
 -(void)deleteGroup:(NSString*)groupID; // deletes a group
 -(void)listPads:(NSString*)groupID; // returns all pads of this group
 -(void)createGroupPad:(NSString*)groupID padName:(NSString*)padName text:(NSString*)text; // creates a new pad in this group
--(void)listAllGroups;//Test
+-(void)listAllGroups; // lists all existing groups
 
 //Author
 -(void)createAuthor:(NSString*)name; // creates a new author
 -(void)createAuthorIfNotExistsFor:(NSString*)authorMapper name:(NSString*)name; // this functions helps you to map your application author ids to etherpad lite author ids
 -(void)listPadsOfAuthor:(NSString*)authorID; // returns an array of all pads this author contributed to
--(void)getAuthorName:(NSString*)authorID;//Test
+-(void)getAuthorName:(NSString*)authorID; // returns the Author Name of the author
 
 //Session
 -(void)createSession:(NSString*)groupID authorID:(NSString*)authorID validUntil:(long)validUntil; // creates a new session. validUntil is an unix timestamp in seconds
@@ -56,7 +56,7 @@
 -(void)isPasswordProtected:(NSString*)padID; // returns true or false
 -(void)listAuthorsOfPad:(NSString*)padID; // returns an array of authors who contributed to this pad
 -(void)getLastEdited:(NSString*)padID; // returns the timestamp of the last revision of the pad
-//sendClientsMessage
+-(void)sendClientsMessage:(NSString*)padID msg:(NSString*)msg; // sends a custom message to the pad
 
 -(NSData*)getJSON; // returns raw JSON data
 

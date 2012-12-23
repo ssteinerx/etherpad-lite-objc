@@ -271,6 +271,12 @@
     [self sendMessageToPad];
 }
 
+-(void)sendClientsMessage:(NSString *)padID msg:(NSString *)msg{
+    self.message = @"sendClientsMessage";
+    self.messageParameters = [NSString stringWithFormat:@"padID=%@&msg=%@",padID,msg];
+    [self sendMessageToPad];
+}
+
 
 #pragma mark helper methods
 
