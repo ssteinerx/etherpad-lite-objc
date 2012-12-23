@@ -4,7 +4,7 @@ An Objective-C client for Etherpad Lite’s HTTP JSON API. Etherpad Lite is a co
 See https://github.com/Pita/etherpad-lite for more information.
 
 DOCUMENTATION:
-Read the documentation at https://github.com/Pita/etherpad-lite/wiki/HTTP-API
+Read the documentation at http://etherpad.org/doc/v1.2.0/
 
 EXAMPLES:
 Add
@@ -18,6 +18,6 @@ apiController.delegate = self;
 apiController.apiKey = @"apiKey";
 apiController.host = @"http://localhost:9001";
 
-[apiController createPad:@"newEtherpad" :@"HelloWorld"];
+[apiController createPad:@"newEtherpad" text:@"HelloWorld"];
 
 
