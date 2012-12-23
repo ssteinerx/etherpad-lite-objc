@@ -11,10 +11,8 @@
 
 @interface EtherNetworkController()
 
-@property (nonatomic,strong) NSMutableData* receivedData; // raw json data / server response
-@property (nonatomic,strong) NSURLConnection* connection;
-
--(void)clearReceivedData;
+@property (strong) NSURLConnection* connection;
+@property NSOperationQueue* operationQueue;
 
 @end
 
@@ -22,7 +20,6 @@
 
 @synthesize delegate;
 @synthesize padData;
-@synthesize receivedData;
 @synthesize connection;
 
 #pragma mark init methods
@@ -31,7 +28,7 @@
 {
     self = [super init];
     if (self) {
-        // Initialization code here.
+        self.operationQueue = [[NSOperationQueue alloc] init];
     }
     return self;
 }
@@ -43,46 +40,29 @@
     NSURL* url = [[NSURL alloc] initWithString:urlString];
     NSURLRequest* request = [[NSURLRequest alloc] initWithURL:url];
     self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    self.receivedData = [[NSMutableData alloc] init];
-}
-
-- (void)clearReceivedData{
-    [self.receivedData setLength:0];
+    [NSURLConnection sendAsynchronousRequest:request queue:self.operationQueue completionHandler:^(NSURLResponse *respone, NSData *data, NSError *error){
+        self.padData = data;
+        if (self.padData != nil) {
+            if ([self.delegate respondsToSelector:@selector(networkRequestDidFinish)]) {
+                [self.delegate networkRequestDidFinish];
+            }
+        }
+        else {
+            int errorCode = 0;
+            NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
+            [errorDetail setValue:@"Failed to get data" forKey:NSLocalizedDescriptionKey];
+            NSError* error = [[NSError alloc] initWithDomain:@"com.etherpad-lite-client.Network" code:errorCode userInfo:errorDetail];
+            if ([self.delegate respondsToSelector:@selector(networkRequestDidFailWithError:)]) {
+                [self.delegate networkRequestDidFailWithError:error];
+            }
+        }
+    }];
 }
 
 #pragma mark delegate methods nsurlconnection
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    [self.receivedData appendData:data];
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection{
-    self.padData = (NSData*)self.receivedData;
-    if (self.padData != nil) {
-        if ([self.delegate respondsToSelector:@selector(networkRequestDidFinish)]) {
-            [self.delegate networkRequestDidFinish];
-        }
-    }
-    else {
-        int errorCode = 0;
-        NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
-        [errorDetail setValue:@"Failed to get receivedData" forKey:NSLocalizedDescriptionKey];
-        NSError* error = [[NSError alloc] initWithDomain:@"com.etherpad-lite-client.Network" code:errorCode userInfo:errorDetail];
-        if ([self.delegate respondsToSelector:@selector(networkRequestDidFailWithError:)]) {
-            [self.delegate networkRequestDidFailWithError:error];
-        }
-    }
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    [self clearReceivedData];
-}
-
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    [self clearReceivedData];
     if ([self.delegate respondsToSelector:@selector(networkRequestDidFailWithError:)]) {
         [self.delegate networkRequestDidFailWithError:error];
     }

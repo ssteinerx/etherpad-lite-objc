@@ -11,7 +11,7 @@
 
 @interface EtherJsonController : NSObject
 
-@property (nonatomic,weak) id delegate;
+@property (weak) id delegate;
 
 -(id)init;
 -(id)objectWithData:(NSData*)jsonData; // returns a Foundation object (like NSDictionary or NSArray) from given JSON data.

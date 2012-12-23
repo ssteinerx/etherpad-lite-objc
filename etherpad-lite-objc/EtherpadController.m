@@ -30,7 +30,7 @@
 
 
 -(IBAction)sendMessage:(id)sender{
-    [apiController createPad:@"newEtherpad" :@"HelloWorld"];
+    [apiController createPad:@"newEtherpad" text:@"HelloWorld"];
 }
 
 -(IBAction)clearData:(id)sender{
@@ -40,12 +40,13 @@
 }
 
 -(void)requestDidFinish:(NSDictionary *)responseDictionary{
-    [codeLabel setStringValue:[responseDictionary objectForKey:@"code"]];
-    [messageLabel setStringValue:[responseDictionary objectForKey:@"message"]];
-    [dataLabel setStringValue:[responseDictionary objectForKey:@"data"]];
-    
-    NSData* jsonData = [apiController getJSON];
-    NSLog(@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
+    if (responseDictionary != nil) {
+        [codeLabel setStringValue:[responseDictionary objectForKey:@"code"]];
+        [messageLabel setStringValue:[responseDictionary objectForKey:@"message"]];
+        [dataLabel setStringValue:[responseDictionary objectForKey:@"data"]];
+        NSData* jsonData = [apiController getJSON];
+        NSLog(@"%@",[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
+    }
 }
 
 -(void)requestDidFailWithError:(NSError *)error{

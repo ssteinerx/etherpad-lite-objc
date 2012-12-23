@@ -9,7 +9,7 @@
 
 #import "EtherAPIController.h"
 
-@interface EtherAPIController()
+@interface EtherAPIController()<EtherpadNetworkDelegate,EtherpadJsonDelegate>
 
 @property EtherNetworkController* etherNetworkController;
 @property EtherJsonController* etherJsonParser;
@@ -68,7 +68,7 @@
     [self sendMessageToPad];
 }
 
--(void)createGroupPad:(NSString*)groupID:(NSString*)padName:(NSString*)text{
+-(void)createGroupPad:(NSString*)groupID padName:(NSString*)padName text:(NSString*)text{
     self.message = @"createGroupPad";
     if (text != nil) {
         self.messageParameters = [NSString stringWithFormat:@"groupID=%@&padName=%@&text=%@",groupID,padName,text];
@@ -76,6 +76,12 @@
     else{
         self.messageParameters = [NSString stringWithFormat:@"groupID=%@&padName=%@",groupID,padName];
     }
+    [self sendMessageToPad];
+}
+
+-(void)listAllGroups{
+    self.message = @"listAllGroups";
+    self.messageParameters = nil;
     [self sendMessageToPad];
 }
 
@@ -95,7 +101,7 @@
     [self sendMessageToPad];
 }
 
--(void)createAuthorIfNotExistsFor:(NSString *)authorMapper:(NSString *)name{
+-(void)createAuthorIfNotExistsFor:(NSString *)authorMapper name:(NSString *)name{
     self.message = @"createAuthorIfNotExistsFor";
     if (name != nil) {
         self.messageParameters = [NSString stringWithFormat:@"authorMapper=%@&name=%@",authorMapper,name];
@@ -106,9 +112,15 @@
     [self sendMessageToPad];
 }
 
+-(void)getAuthorName:(NSString *)authorID{
+    self.message = @"getAuthorName";
+    self.messageParameters = [NSString stringWithFormat:@"authorID=%@",authorID];
+    [self sendMessageToPad];
+}
+
 #pragma mark Session
 
--(void)createSession:(NSString *)groupID :(NSString *)authorID :(long)validUntil{
+-(void)createSession:(NSString *)groupID authorID:(NSString *)authorID validUntil:(long)validUntil{
     self.message = @"createSession";
     self.messageParameters = [NSString stringWithFormat:@"groupID=%@&authorID=%@&validUntil=%ld",groupID,authorID,validUntil];
     [self sendMessageToPad];
@@ -140,7 +152,7 @@
 
 #pragma mark Pad Content
 
--(void)getText:(NSString *)padID :(NSString *)rev{
+-(void)getText:(NSString *)padID rev:(NSString *)rev{
     self.message = @"getText";
     if (rev != nil) {
         self.messageParameters = [NSString stringWithFormat:@"padID=%@&rev=%@",padID,rev];
@@ -151,7 +163,7 @@
     [self sendMessageToPad];
 }
 
--(void)setText:(NSString*)padID:(NSString*)text{
+-(void)setText:(NSString*)padID text:(NSString*)text{
     self.message = @"setText";
     if (text != nil) {
         self.messageParameters = [NSString stringWithFormat:@"padID=%@&text=%@",padID,text];
@@ -162,7 +174,7 @@
     [self sendMessageToPad];
 }
 
--(void)getHTML:(NSString*)padID:(NSString*)rev{
+-(void)getHTML:(NSString*)padID rev:(NSString*)rev{
     self.message = @"getHTML";
     if (rev != nil) {
         self.messageParameters = [NSString stringWithFormat:@"padID=%@&rev=%@",padID,rev];
@@ -175,7 +187,7 @@
 
 #pragma mark Pad
 
--(void)createPad:(NSString *)padID :(NSString *)text{
+-(void)createPad:(NSString *)padID text:(NSString *)text{
     self.message = @"createPad";
     if (text != nil) {
         self.messageParameters = [NSString stringWithFormat:@"padID=%@&text=%@",padID,text];
@@ -198,6 +210,12 @@
     [self sendMessageToPad];
 }
 
+-(void)padUsers:(NSString *)padID{
+    self.message = @"padUsers";
+    self.messageParameters = [NSString stringWithFormat:@"padID=%@",padID];
+    [self sendMessageToPad];
+}
+
 -(void)deletePad:(NSString *)padID{
     self.message = @"deletePad";
     self.messageParameters = [NSString stringWithFormat:@"padID=%@",padID];
@@ -210,7 +228,7 @@
     [self sendMessageToPad];
 }
 
--(void)setPublicStatus:(NSString*)padID:(BOOL)publicStatus{
+-(void)setPublicStatus:(NSString*)padID publicStatus:(BOOL)publicStatus{
     self.message = @"setPublicStatus";
     NSString* publicS;
     if (publicStatus) {
@@ -229,7 +247,7 @@
     [self sendMessageToPad];
 }
 
--(void)setPassword:(NSString *)padID :(NSString *)password{
+-(void)setPassword:(NSString *)padID password:(NSString *)password{
     self.message = @"setPassword";
     self.messageParameters = [NSString stringWithFormat:@"padID=%@&password=%@",padID,password];
     [self sendMessageToPad];
