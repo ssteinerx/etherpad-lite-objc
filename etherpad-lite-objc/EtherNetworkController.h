@@ -15,7 +15,7 @@
 @property (weak) NSData* padData; // parsed JSON data / server response
 
 -(id)init;
--(void)sendMessage:(NSString*)message ToHost:(NSString*)host apiKey:(NSString*)apiKey messageParameters:(NSString*)messageParameters; // sends the request with the passed parameters to the etherpad-lite api
+-(void)sendMessage:(NSString *)message ToHost:(NSString *)host apiVersion:(NSString *)apiVersion apiKey:(NSString *)apiKey messageParameters:(NSString *)messageParameters; // sends the request with the passed parameters to the etherpad-lite api
 
 @end
 
