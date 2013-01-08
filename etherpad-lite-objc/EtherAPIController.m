@@ -277,11 +277,17 @@
     [self sendMessageToPad];
 }
 
+-(void)checkToken{
+    self.message = @"checkToken";
+    self.messageParameters = nil;
+    [self sendMessageToPad];
+}
+
 
 #pragma mark helper methods
 
 -(void)sendMessageToPad{
-    [self.etherNetworkController sendMessage:self.message ToHost:self.host apiKey:self.apiKey messageParameters:self.messageParameters];
+    [self.etherNetworkController sendMessage:self.message ToHost:self.host apiVersion:self.apiVersion apiKey:self.apiKey messageParameters:self.messageParameters];
 }
 
 -(NSData*)getJSON{

@@ -16,6 +16,7 @@
 @property id delegate;
 @property NSString* host;
 @property NSString* apiKey;
+@property NSString* apiVersion;
 
 //Groups
 -(void)createGroup; // creates a new group
@@ -47,7 +48,7 @@
 -(void)createPad:(NSString*)padID text:(NSString*)text; // creates a new (non-group) pad. Note that if you need to create a group Pad, you should call createGroupPad.
 -(void)getRevisionsCount:(NSString*)padID; // returns the number of revisions of this pad
 -(void)padUsersCount:(NSString*)padID; // returns the number of user that are currently editing this pad
--(void)padUsers:(NSString*)padID;//Test
+-(void)padUsers:(NSString*)padID;// returns the list of users that are currently editing this pad
 -(void)deletePad:(NSString*)padID; // deletes a pad
 -(void)getReadOnlyID:(NSString*)padID; // returns the read only link of a pad
 -(void)setPublicStatus:(NSString*)padID publicStatus:(BOOL)publicStatus; // sets a boolean for the public status of a pad
@@ -57,6 +58,7 @@
 -(void)listAuthorsOfPad:(NSString*)padID; // returns an array of authors who contributed to this pad
 -(void)getLastEdited:(NSString*)padID; // returns the timestamp of the last revision of the pad
 -(void)sendClientsMessage:(NSString*)padID msg:(NSString*)msg; // sends a custom message to the pad
+-(void)checkToken; // returns ok when the current api token is valid
 
 -(NSData*)getJSON; // returns raw JSON data
 
