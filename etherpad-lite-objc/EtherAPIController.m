@@ -185,6 +185,31 @@
     [self sendMessageToPad];
 }
 
+-(void)setHTML:(NSString *)padID html:(NSString *)html{
+    self.message = @"setHTML";
+    self.messageParameters = [NSString stringWithFormat:@"padID=%@&html=%@",padID,html];
+    [self sendMessageToPad];
+}
+
+#pragma mark Chat
+
+-(void)getChatHistory:(NSString *)padID start:(NSString *)start end:(NSString *)end{
+    self.message = @"getChatHistory";
+    if (start != nil && end != nil) {
+        self.messageParameters = [NSString stringWithFormat:@"padID=%@&start=%@&end=%@",padID,start,end];
+    }
+    else{
+        self.messageParameters = [NSString stringWithFormat:@"padID=%@",padID];
+    }
+    [self sendMessageToPad];
+}
+
+-(void)getChatHead:(NSString *)padID{
+    self.message = @"getChatHead";
+    self.messageParameters = [NSString stringWithFormat:@"padID=%@",padID];
+    [self sendMessageToPad];
+}
+
 #pragma mark Pad
 
 -(void)createPad:(NSString *)padID text:(NSString *)text{
@@ -279,6 +304,14 @@
 
 -(void)checkToken{
     self.message = @"checkToken";
+    self.messageParameters = nil;
+    [self sendMessageToPad];
+}
+
+#pragma mark Pads
+
+-(void)listAllPads{
+    self.message = @"listAllPads";
     self.messageParameters = nil;
     [self sendMessageToPad];
 }

@@ -44,6 +44,10 @@
 -(void)setText:(NSString*)padID text:(NSString*)text; // sets the text of a pad
 -(void)getHTML:(NSString*)padID rev:(NSString*)rev; // returns the text of a pad formatted as HTML
 
+//Chat
+-(void)getChatHistory:(NSString*)padID start:(NSString*)start end:(NSString*)end; /* returns * a part of the chat history, when `start` and `end` are given or the whole chat histroy, when no extra parameters are given */
+-(void)getChatHead:(NSString*)padID; //returns the chatHead (last number of the last chat-message) of the pad
+
 //Pad
 -(void)createPad:(NSString*)padID text:(NSString*)text; // creates a new (non-group) pad. Note that if you need to create a group Pad, you should call createGroupPad.
 -(void)getRevisionsCount:(NSString*)padID; // returns the number of revisions of this pad
@@ -59,6 +63,9 @@
 -(void)getLastEdited:(NSString*)padID; // returns the timestamp of the last revision of the pad
 -(void)sendClientsMessage:(NSString*)padID msg:(NSString*)msg; // sends a custom message to the pad
 -(void)checkToken; // returns ok when the current api token is valid
+
+//Pads
+-(void)listAllPads; // lists all pads on this epl instance
 
 -(NSData*)getJSON; // returns raw JSON data
 

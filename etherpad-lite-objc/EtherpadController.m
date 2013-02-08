@@ -24,7 +24,7 @@
         apiController.delegate = self;
         apiController.apiKey = @"apiKey";
         apiController.host = @"http://localhost:9001";
-        apiController.apiVersion = @"1.2";
+        apiController.apiVersion = @"1.2.7";
     }
     return self;
 }
