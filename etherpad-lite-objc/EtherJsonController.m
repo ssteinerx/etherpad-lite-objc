@@ -31,7 +31,7 @@
             NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
             NSString* localizedDescription = [NSString stringWithFormat:@"The given object \"%@\" is not a valid JSON object.",[jsonObject description]];
             [errorDetail setValue:localizedDescription forKey:NSLocalizedDescriptionKey];
-            *error = [[NSError alloc] initWithDomain:@"com.etherpad-lite-client.EtherJsonController" code:nil userInfo:errorDetail];
+            *error = [[NSError alloc] initWithDomain:@"com.etherpad-lite-objc.EtherJsonController" code:nil userInfo:errorDetail];
         }
         return nil;
     }
