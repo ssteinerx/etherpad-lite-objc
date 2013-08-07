@@ -9,7 +9,7 @@
 
 #import "EtherAPIController.h"
 
-@interface EtherAPIController()<EtherpadNetworkDelegate,EtherpadJsonDelegate>
+@interface EtherAPIController()<EtherpadNetworkDelegate>
 
 @property EtherNetworkController* etherNetworkController;
 @property EtherJsonController* etherJsonParser;
@@ -37,7 +37,6 @@
         self.etherNetworkController = [[EtherNetworkController alloc] init];
         self.etherJsonParser = [[EtherJsonController alloc] init];
         self.etherNetworkController.delegate = self;
-        self.etherJsonParser.delegate = self;
     }
     return self;
 }
@@ -334,12 +333,22 @@
 }
 
 -(NSDictionary*)jsonToDictionary{
-    NSDictionary* jsonData = [self.etherJsonParser objectWithData:self.responseData];
+    NSError* error;
+    NSDictionary* jsonData = [EtherJsonController objectWithData:self.responseData error:&error];
+    if (error) {
+        NSLog(@"%@",[error localizedDescription]);
+    }
     return jsonData;
 }
 
 -(NSData*)getPrettyPrintedJson:(id)jsonDataObject{
-    return [self.etherJsonParser dataWithObject:jsonDataObject];
+    NSError* error;
+    jsonDataObject = self.etherJsonParser;
+    NSData* data = [EtherJsonController dataWithObject:jsonDataObject error:&error];
+    if (error) {
+        NSLog(@"%@",[error localizedDescription]);
+    }
+    return data;
 }
 
 #pragma mark delegate methods
@@ -352,12 +361,6 @@
 }
 
 -(void)networkRequestDidFailWithError:(NSError*)error{
-    if ([self.delegate respondsToSelector:@selector(requestDidFailWithError:)]) {
-        [self.delegate requestDidFailWithError:error];
-    }
-}
-
--(void)jsonDidFailWithError:(NSError*)error{
     if ([self.delegate respondsToSelector:@selector(requestDidFailWithError:)]) {
         [self.delegate requestDidFailWithError:error];
     }

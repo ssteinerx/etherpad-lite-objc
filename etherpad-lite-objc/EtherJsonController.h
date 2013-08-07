@@ -11,14 +11,10 @@
 
 @interface EtherJsonController : NSObject
 
-@property (weak) id delegate;
++ (id)objectWithData:(NSData*)jsonData; // returns a Foundation object (like NSDictionary or NSArray) from given JSON data.
++ (id)objectWithData:(NSData *)jsonData error:(NSError**)error;
 
--(id)init;
--(id)objectWithData:(NSData*)jsonData; // returns a Foundation object (like NSDictionary or NSArray) from given JSON data.
--(NSData*)dataWithObject:(id)jsonObject; // returns JSON data from a Foundation object.
++ (NSData*)dataWithObject:(id)jsonObject; // returns JSON data from a Foundation object.
++ (NSData*)dataWithObject:(id)jsonObject error:(NSError**)error;
 
-@end
-
-@protocol EtherpadJsonDelegate
--(void)jsonDidFailWithError:(NSError*)error; // reports any errors to the delegate
 @end

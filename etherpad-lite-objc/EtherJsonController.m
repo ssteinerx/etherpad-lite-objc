@@ -11,52 +11,39 @@
 
 @implementation EtherJsonController
 
-@synthesize delegate;
-
-#pragma mark init methods
-
--(id)init{
-    self = [super init];
-    if (self) {
-        // Initialization code here.
-    }    
-    return self;
-}
-
 #pragma mark main methods
 
--(id)objectWithData:(NSData *)jsonData{
-    NSError *error = nil;
-    id jObject = [NSJSONSerialization
-                   JSONObjectWithData:jsonData
-                   options:NSJSONReadingMutableContainers
-                   error:&error];
-    if (jObject != nil) {
-        return jObject;
-    }
-    else {
-        if ([self.delegate respondsToSelector:@selector(jsonDidFailWithError:)]) {
-            [self.delegate jsonDidFailWithError:error];
++ (id)objectWithData:(NSData *)jsonData error:(NSError**)error{
+    id jsonObject = [NSJSONSerialization
+                  JSONObjectWithData:jsonData
+                  options:NSJSONReadingMutableContainers
+                  error:error];
+    return jsonObject;
+}
+
++ (id)objectWithData:(NSData *)jsonData{
+    return [self objectWithData:jsonData error:NULL];
+}
+
++ (NSData*)dataWithObject:(id)jsonObject error:(NSError**)error{
+    if (![NSJSONSerialization isValidJSONObject:jsonObject]) {
+        if (error != NULL) {
+            NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
+            NSString* localizedDescription = [NSString stringWithFormat:@"The given object \"%@\" is not a valid JSON object.",[jsonObject description]];
+            [errorDetail setValue:localizedDescription forKey:NSLocalizedDescriptionKey];
+            *error = [[NSError alloc] initWithDomain:@"com.etherpad-lite-client.EtherJsonController" code:nil userInfo:errorDetail];
         }
         return nil;
     }
-}
-
--(NSData*)dataWithObject:(id)jsonObject{
-    NSError *error = nil;
     NSData* jsonData = [NSJSONSerialization
                          dataWithJSONObject:jsonObject
                          options:NSJSONWritingPrettyPrinted
-                         error:&error];
-    if (jsonData != nil) {
-        return jsonData;
-    }
-    else {
-        if ([self.delegate respondsToSelector:@selector(jsonDidFailWithError:)]) {
-            [self.delegate jsonDidFailWithError:error];
-        }
-        return nil;
-    }
+                         error:error];
+    return jsonData;
+}
+
++ (NSData*)dataWithObject:(id)jsonObject{
+    return [self dataWithObject:jsonObject error:NULL];
 }
 
 @end
